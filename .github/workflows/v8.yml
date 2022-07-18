@@ -28,19 +28,7 @@ jobs:
     - name: init env
       run: |
         sudo apt-get update
-        sudo apt-get -y install pkg-config git subversion curl wget build-essential python xz-utils zip p7zip-full yum tar gcc g++
-        
-    # update python version
-    - name: python_update
-      run: |
-        wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz
-        tar xvf Python-3.7.3.tar.xz
-        cd Python-3.7.3/
-        ./configure
-        make
-        make install
-        mv /usr/bin/python /usr/bin/python.bak
-        ln -s /usr/local/bin/python3 /usr/bin/python
+        sudo apt-get -y install pkg-config git subversion curl wget build-essential python3.7 xz-utils zip p7zip-full
         
     # get depot_tools
     - name: depot_tools
