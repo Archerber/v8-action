@@ -28,12 +28,11 @@ jobs:
     - name: init env
       run: |
         sudo apt-get update
-        sudo apt-get -y install pkg-config git subversion curl wget build-essential python xz-utils zip p7zip-full yum tar
+        sudo apt-get -y install pkg-config git subversion curl wget build-essential python xz-utils zip p7zip-full yum tar gcc g++
         
     # update python version
     - name: python_update
       run: |
-        sudo yum install gcc gcc-c++ -y
         wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz
         tar xvf Python-3.7.3.tar.xz
         cd Python-3.7.3/
