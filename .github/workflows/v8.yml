@@ -36,10 +36,11 @@ jobs:
         wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz
         tar xvf Python-3.7.3.tar.xz
         cd Python-3.7.3/
-        sudo ./configure
-        sudo make && make install
-        sudo mv /usr/bin/python /usr/bin/python.bak
-        sudo ln -s /usr/local/bin/python3 /usr/bin/python
+        ./configure
+        make
+        make install
+        mv /usr/bin/python /usr/bin/python.bak
+        ln -s /usr/local/bin/python3 /usr/bin/python
         
     # get depot_tools
     - name: depot_tools
