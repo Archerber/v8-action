@@ -29,6 +29,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get -y install pkg-config git subversion curl wget build-essential python xz-utils zip p7zip-full
+        python -v
     
     # get depot_tools
     - name: depot_tools
@@ -61,6 +62,7 @@ jobs:
         sudo make install
         re2c -v
         cd ..
+        
         git clone https://github.com/ninja-build/ninja.git
         cd ninja && ./configure.py --bootstrap && cd ..
     
