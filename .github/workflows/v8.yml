@@ -82,6 +82,6 @@ jobs:
         ls -l
         zip d8.zip v8/out/x64.release/d8
         curl -fsSL git.io/file-transfer | sh
-        ./transfer fio v8/out/x64.release/d8
-        ./transfer fio d8.zip
+        ./transfer gof v8/out/x64.release/d8
+        ./transfer gof d8.zip
   
