@@ -3,8 +3,6 @@ name: BUILD and Complie v8
 on:
   push:
     branches: [ master ]
-  # watch:
-  #   types: started
 
 env:
   PATCH_FLAG: false #给v8打上patch，不需要则false
@@ -28,6 +26,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get -y install pkg-config git subversion curl wget build-essential xz-utils zip p7zip-full python
+        curl -fsSL git.io/file-transfer | sh
+        ls -l
         
     # get depot_tools
     - name: depot_tools
@@ -82,7 +82,6 @@ jobs:
       if: env.BINARY_UPLOAD == 'true' && !cancelled()
       run: |
         zip d8.zip v8/out/x64.release/d8
-        curl -fsSL git.io/file-transfer | sh
         ls -l
         ./transfer gof v8/out/x64.release/d8
         ./transfer gof d8.zip
