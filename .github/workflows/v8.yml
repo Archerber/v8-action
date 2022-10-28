@@ -8,7 +8,7 @@ on:
 
 env:
   PATCH_FLAG: true #false编译最新版本
-  COMMIT: 3eac748f745350b5af73b8eec0359c7629d2f060
+  COMMIT: 9.3.345.16
   SRC_UPLOAD: true
   BINARY_UPLOAD: true
 
